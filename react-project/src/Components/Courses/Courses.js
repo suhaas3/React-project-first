@@ -1,11 +1,11 @@
 import React from "react";
 
-function Clubs() {
+function Courses() {
 
   return (
-    <div>This is Clubs Section</div>
+    <div>This is Courses Section</div>
   )
 }
 
 
-export default Clubs;
+export default Courses;

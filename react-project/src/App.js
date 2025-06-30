@@ -1,11 +1,27 @@
 import React from "react";
 import Navbar from "./Components/Navbar/Navbar";
-
+import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
+import Home from "./Components/Home/Home";
+import SearchBar from "./Components/SearchBar/SearchBar";
+import Courses from "./Components/Courses/Courses";
+import Webinars from "./Components/Webinars/Webinars";
+import DigitalProducts from "./Components/DigitalProducts/DigitalProducts";
+import Profile from "./Components/Profile/Profile";
 
 function App() {
   return (
     <>
-    <Navbar/>
+      <Router>
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="/search" element={<SearchBar/>}/>
+          <Route path="/courses" element={<Courses />}/>
+          <Route path="/webinars" element={<Webinars />}/>
+          <Route path="/digitalProducts" element={<DigitalProducts/>}/>
+          <Route path="/profile" element={<Profile/>}/>
+        </Routes>
+      </Router>
     </>
   );
 }

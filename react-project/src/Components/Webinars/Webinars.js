@@ -1,10 +1,10 @@
 import React from "react";
 
-function Events() {
+function Webinars() {
 
   return (
-    <div>This is Events Section</div>
+    <div>This is webinars Section</div>
   )
 }
 
-export default Events;
+export default Webinars;
