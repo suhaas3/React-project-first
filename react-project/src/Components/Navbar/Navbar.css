@@ -1,0 +1,29 @@
+.navbar-section {
+  display: block;
+  background-color: aqua;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+.nav-lists {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.search {
+  width: 280px;
+  height: 30px;
+  border-radius: 35px;
+  border-color: orange;
+  font-size: 16px;
+}
+.search:hover {
+  color: hotpink;
+}
+.search::placeholder {
+  padding-left: 10px;
+}
