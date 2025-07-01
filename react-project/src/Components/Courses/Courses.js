@@ -3,7 +3,7 @@ import React from "react";
 function Courses() {
 
   return (
-    <div>This is Courses Section</div>
+    <h1>This is Courses Section</h1>
   )
 }
 

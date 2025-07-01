@@ -3,7 +3,7 @@ import React from "react";
 function DigitalProducts() {
 
   return (
-    <div>Digital products section</div>
+    <h1>Clubs section</h1>
   )
 }
 

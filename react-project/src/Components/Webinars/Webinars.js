@@ -3,7 +3,7 @@ import React from "react";
 function Webinars() {
 
   return (
-    <div>This is webinars Section</div>
+    <h1>Events Section</h1>
   )
 }
 
