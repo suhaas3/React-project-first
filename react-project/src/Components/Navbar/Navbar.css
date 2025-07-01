@@ -1,6 +1,9 @@
 .navbar-section {
-  display: block;
-  background-color: aqua;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgb(236, 233, 233);
+  color: rgb(220, 42, 6);
   padding-top: 1px;
   padding-bottom: 1px;
 }
@@ -9,9 +12,23 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  flex: 1;
-  margin-left: 200px;
-  margin-right: 200px;
+  width: 500px;
+  margin-left: 200px; 
+  margin-right: 100px;
+}
+
+/* .lists-top {
+  text-decoration: none;
+} */
+.lists {
+  cursor: pointer;
+}
+
+.active-link {
+  background-color: black;
+  color: white;
+  padding: 2px 8px 3px 8px;
+  border-radius: 15px;
 }
 
 .search {
@@ -20,10 +37,19 @@
   border-radius: 35px;
   border-color: orange;
   font-size: 16px;
-}
-.search:hover {
-  color: hotpink;
+  padding-left: 10px;
 }
 .search::placeholder {
-  padding-left: 10px;
+  color: gray;
+}
+
+.login-button-navbar {
+  background-color: orange;
+  color: black;
+  border: none;
+  padding: 8px 30px;
+  border-radius: 20px;
+  font-size: 16px;
+  margin-left: 30px;
+  cursor: pointer;
 }

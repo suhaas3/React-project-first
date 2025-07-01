@@ -6,7 +6,8 @@ import SearchBar from "./Components/SearchBar/SearchBar";
 import Courses from "./Components/Courses/Courses";
 import Webinars from "./Components/Webinars/Webinars";
 import DigitalProducts from "./Components/DigitalProducts/DigitalProducts";
-import Profile from "./Components/Profile/Profile";
+import LoginSection from "./Components/LoginSection/LoginSection";
+
 
 function App() {
   return (
@@ -14,12 +15,12 @@ function App() {
       <Router>
         <Navbar/>
         <Routes>
-          <Route path="/" element={<Home />}/>
+          <Route path="/home" element={<Home />}/>
           <Route path="/search" element={<SearchBar/>}/>
           <Route path="/courses" element={<Courses />}/>
           <Route path="/webinars" element={<Webinars />}/>
           <Route path="/digitalProducts" element={<DigitalProducts/>}/>
-          <Route path="/profile" element={<Profile/>}/>
+          <Route path="/" element={<LoginSection/>}/>
         </Routes>
       </Router>
     </>
