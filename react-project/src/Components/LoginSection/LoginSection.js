@@ -47,7 +47,7 @@ function LoginSection() {
         <h3>Login Section</h3>
         <div className="login-section">
           <input type="text" placeholder="UserName" className="input-username" onChange={getUserName} />
-          <input type="text" placeholder="Password" className="input-password" onChange={getPassword} />
+          <input type="password" placeholder="Password" className="input-password" onChange={getPassword} />
           <button className="login-button" onClick={displayUserDetails}>Login</button>
           <span className="error-message">{error}</span>
           <div className="or-container">
