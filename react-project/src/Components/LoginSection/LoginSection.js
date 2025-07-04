@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './LoginSection.css';
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 
 function LoginSection() {
@@ -28,17 +29,38 @@ function LoginSection() {
       password: `${password}`
     }));
   }
-  function displayUserDetails() {
-    if (userDetails.userName === 'rajini kanth' && userDetails.password === '12345') {
-      alert('Login Succesfully')
-      navigate('/home')
-    } else {
-      setError('sorry, Ur password was incorrect. Please double check ur password')
-      alert('sorry, Ur password was incorrect. Please double check ur password')
+
+  async function getUserDetails() {
+    try {
+      const user = await axios.post('https://api.escuelajs.co/api/v1/auth/login', {
+        email: userDetails.userName,
+        password: userDetails.password
+      })
+    } catch (error) {
+      console.log('Error :', error.message)
     }
-    console.log(userDetails.userName, userDetails.password)
   }
 
+
+  function displayUserDetails() {
+    getUserDetails();
+    try {
+      if (userDetails.userName === 'john@mail.com' && userDetails.password === 'changeme') {
+        alert('Login Succesfully')
+        navigate('/home')
+      } else {
+        setError('sorry, Ur password was incorrect. Please double check ur password')
+      }
+    } catch (error) {
+      console.log('Error:', error.message)
+    }
+  }
+
+  function goToHome(event) {
+    if (event.key === 'Enter') {
+      navigate('/home')
+    }
+  }
 
 
   return (
@@ -46,8 +68,8 @@ function LoginSection() {
       <div className="login-main-section">
         <h3>Login Section</h3>
         <div className="login-section">
-          <input type="text" placeholder="UserName" className="input-username" onChange={getUserName} />
-          <input type="password" placeholder="Password" className="input-password" onChange={getPassword} />
+          <input type="text" placeholder="UserName or email" className="input-username" onChange={getUserName} />
+          <input type="password" placeholder="Password" className="input-password" onChange={getPassword} onKeyDown={goToHome} />
           <button className="login-button" onClick={displayUserDetails}>Login</button>
           <span className="error-message">{error}</span>
           <div className="or-container">
