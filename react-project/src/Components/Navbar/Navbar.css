@@ -4,8 +4,8 @@
   align-items: center;
   background-color: rgb(236, 233, 233);
   color: rgb(220, 42, 6);
-  padding-top: 1px;
-  padding-bottom: 1px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .nav-lists {
   display: flex;
@@ -33,7 +33,7 @@
 
 .search {
   width: 280px;
-  height: 30px;
+  height: 36px;
   border-radius: 35px;
   border-color: orange;
   font-size: 16px;
@@ -47,7 +47,7 @@
   background-color: orange;
   color: black;
   border: none;
-  padding: 8px 30px;
+  padding: 6px 30px;
   border-radius: 20px;
   font-size: 16px;
   margin-left: 30px;

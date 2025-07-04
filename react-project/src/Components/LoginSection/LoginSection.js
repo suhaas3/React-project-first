@@ -65,11 +65,12 @@ function LoginSection() {
 
   return (
     <>
+    <div className="login">
       <div className="login-main-section">
         <h3>Login Section</h3>
         <div className="login-section">
-          <input type="text" placeholder="UserName or email" className="input-username" onChange={getUserName} />
-          <input type="password" placeholder="Password" className="input-password" onChange={getPassword} onKeyDown={goToHome} />
+          <input type="text" placeholder="UserName or email" className="username-input" onChange={getUserName} />
+          <input type="password" placeholder="Password" className="password-input" onChange={getPassword} onKeyDown={goToHome} />
           <button className="login-button" onClick={displayUserDetails}>Login</button>
           <span className="error-message">{error}</span>
           <div className="or-container">
@@ -92,6 +93,7 @@ function LoginSection() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   )

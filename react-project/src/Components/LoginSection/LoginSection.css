@@ -1,11 +1,13 @@
+.login {
+    background-color: aliceblue;
+    height: 100%;
+}
 .login-main-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 50px 60px 30px 60px;
-  height: 500px;
   border-radius: 10px;
-  background-color: aliceblue;
   padding-bottom: 124px;
 }
 
@@ -16,25 +18,20 @@
   align-items: center;
   border: 2px solid black;
   padding: 50px 40px 30px 40px;
-  height: 270px;
+  height: 348px;
   /* border-radius: 10px; */
 }
-.input-username {
-    height: 24px;
-  width: 200px;
-  /* margin-top: -10px; */
-}
-.input-password {
-  height: 24px;
-  width: 200px;
-  /* margin-top: -20px; */
+.username-input,
+.password-input {
+    height: 30px;
+  width: 250px;
 }
 
 .login-button {
  background-color: orange;
   color: black;
   border: none;
-  padding: 6px 84px;
+  padding: 5px 107px;
   font-size: 15px;
   border-radius: 6px;
   cursor: pointer;
