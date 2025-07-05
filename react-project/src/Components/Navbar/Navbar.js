@@ -23,6 +23,8 @@ function Navbar() {
     <>
       <div className="navbar-section">
 
+          <input className="search" type="text" placeholder="Type ur need" onClick={() => navigateFun('/search')}/>
+
         <ul type='none' className='nav-lists'> 
           {links.map((item,index) => ( 
             <li className={`lists ${location.pathname === item.path ? 'active-link' : ""}`} key={index} onClick={() => navigateFun(item.path)}>{item.name}
@@ -30,7 +32,7 @@ function Navbar() {
           ))}
         </ul>
 
-        <input className="search" type="text" placeholder="Type ur need" onClick={() => navigateFun('/search')}/>
+        <img src="https://www.freeiconspng.com/thumbs/cart-icon/cart-icon-14.png" className="cart-logo" onClick={() => navigateFun('/cart')}/>
 
         <button className="login-button-navbar" onClick={() => navigateFun('/')}>Login</button>
 

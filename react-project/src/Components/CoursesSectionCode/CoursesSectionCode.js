@@ -6,7 +6,7 @@ function CoursesSectionCode() {
    const coursesObject = [{
     image: "https://media.licdn.com/dms/image/v2/D4D12AQGRsL7h26w-Bg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1711431970518?e=2147483647&v=beta&t=7MUoFdBoTt2bbPGQLIg36dcFCRHCwu1HyicK282aK6Y",
     title: "Full Stack Development",
-    description: "Build real projects,and land your dream job as Full stack developer"
+    description: "Build real projects,enhance your skills, and land your dream job as Full stack developer"
   },
   {
     image: "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20201111215809/How-to-Become-a-Front-End-Developer-in-2020.png",
@@ -15,7 +15,7 @@ function CoursesSectionCode() {
   }, {
     image: "https://media.geeksforgeeks.org/wp-content/uploads/20240701150157/Backend-Development.webp",
     title: "Back-End Development",
-    description: "Prepare for a Back-End career with a real-world office simulation experience!"
+    description: "Prepare for a Back-End career with a real-world office simulation experience! Added a preview for our class on how i will be teaching check below"
   }]
 
   return (
@@ -31,7 +31,7 @@ function CoursesSectionCode() {
                     </div>
                     <div class="card-body">
                       <h5 class="card-title course-title">{course.title}</h5>
-                      <p class="card-tex course-description">{course.description}</p>
+                         <p class="card-tex course-description">{course.description}</p>
                       <button className="courses-button">Register Now</button>
                     </div>
                   </div>
