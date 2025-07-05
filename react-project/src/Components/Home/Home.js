@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import './Home.css';
 import CoursesSectionCode from "../CoursesSectionCode/CoursesSectionCode";
 import FooterSectionCode from "../FooterSectionCode/FooterSectionCode";
@@ -35,33 +36,43 @@ function Home() {
   ]
 
   const resultObject = [{
-    image: "https://d1lhfd3j3c8egz.cloudfront.net/themes/theme7/a2.jpeg",
+    image: "https://www.cookcountydems.com/wp-content/uploads/2023/12/Johnson-Sarah-Headshot.jpg",
     title: "Sarah Johnson",
     description: "The service exceeded all our expectations. From initial consultation to final delivery, the team demonstrated exceptional professionalism and attention to detail. The solution implemented has transformed our workflow efficiency by over 60%."
   },
   {
-    image: "https://d1lhfd3j3c8egz.cloudfront.net/themes/theme7/a2.jpeg",
+    image: "https://harvardtechnologyreview.com/wp-content/uploads/2023/10/image.jpeg",
     title: "Michael Chen",
     description: "Working with this company has been a game-changer. Their innovative approach solved problems we didn't even know we had. The implementation was seamless and the ongoing support has been outstanding."
   }, {
-    image: "https://d1lhfd3j3c8egz.cloudfront.net/themes/theme7/a2.jpeg",
+    image: "https://huntnewsnu.com/wp-content/uploads/2025/01/EmilyRodriguez_1-23-25_MargotMurphy-e1737748629702-1200x1113.jpg",
     title: "Emily Rodriguez",
     description: "The level of professionalism is unmatched in the industry. They delivered our complex project on time and within budget while maintaining excellent communication throughout the process. The team's expertise was evident at every stage."
   },
 {
-    image: "https://d1lhfd3j3c8egz.cloudfront.net/themes/theme7/a2.jpeg",
-    title: "Sarah Johnson",
-    description: "The service exceeded all our expectations. From initial consultation to final delivery, the team demonstrated exceptional professionalism and attention to detail. The solution implemented has transformed our workflow efficiency by over 60%."
+    image: "https://api.curtisbrown.co.uk/media/86216/show/square",
+    title: "David Wilson",
+    description: "Exceptional service from start to finish. The solution has completely transformed our operations, resulting in a 45% increase in productivity. The training provided was comprehensive and tailored to our specific needs."
   },
   {
-    image: "https://d1lhfd3j3c8egz.cloudfront.net/themes/theme7/a2.jpeg",
-    title: "Michael Chen",
-    description: "Working with this company has been a game-changer. Their innovative approach solved problems we didn't even know we had. The implementation was seamless and the ongoing support has been outstanding."
+    image: "https://hips.hearstapps.com/hmg-prod/images/mr1665jm-look-01-799-v3-67a9cb6c56387.jpg?crop=1xw:0.7240794573643411xh;center,top&resize=640:*",
+    title: "Jessica Brown",
+    description: "We've seen remarkable improvements across all departments since implementation. The system is intuitive and the support team is always available when we need assistance. Highly recommended!"
   }, {
-    image: "https://d1lhfd3j3c8egz.cloudfront.net/themes/theme7/a2.jpeg",
-    title: "Emily Rodriguez",
-    description: "The level of professionalism is unmatched in the industry. They delivered our complex project on time and within budget while maintaining excellent communication throughout the process. The team's expertise was evident at every stage."
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREUD36yrrOpAL5IO6bxNn_urYwXzPcpZUAog&s",
+    title: "Robert Taylor",
+    description: "Their team understood our complex technical requirements and delivered a solution that not only met but exceeded our expectations. The system integration was flawless."
   }]
+
+  const [page, setPage] = useState(0); // 0 = first 3, 1 = next 3
+  const cardsPerPage = 3;
+
+  const startIndex = page * cardsPerPage;
+  const visibleResults = resultObject.slice(startIndex, startIndex + cardsPerPage);
+
+  const handleToggle = () => {
+    setPage(prev => (prev === 0 ? 1 : 0));
+      };
 
 
   return (
@@ -156,7 +167,7 @@ function Home() {
        
 
 
-        <div className="real-results-container">
+        {/* <div className="real-results-container">
           <h3 className="real-result-heading">Real Results from Real People</h3>
           <div className="container">
             <div className="row row-res-container">
@@ -176,13 +187,47 @@ function Home() {
             </div>
           </div>
           <button className="reslut-course-button">View All Courses</button>
+        </div> */}
+
+        <div className="real-results-container">
+      <h3 className="real-result-heading">Real Results from Real People</h3>
+
+      <div className="container">
+        <div className="row row-res-container">
+          {visibleResults.map((resObj, index) => (
+            <div
+              key={index}
+              className="card result-card-container"
+              style={{ width: '380px' }}
+            >
+              <div className="real-img-container">
+                <img
+                  src={resObj.image}
+                  className="card-img-top res-img"
+                  alt="img"
+                />
+              </div>
+              <div className="card-body">
+                <h5 className="card-title res-title">{resObj.title}</h5>
+                <p className="card-text res-paragraph">{resObj.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
+      </div>
+
+      {/* Dots button toggles between pages */}
+      <button className="show-more-dots" onClick={handleToggle}>
+        ...
+      </button>
+
+      <button className="reslut-course-button">View All Courses</button>
+    </div>
 
       < FooterSectionCode/>
       </div>
     </>
   )
-}
+  }
 
-
-export default Home;
+  export default Home;
