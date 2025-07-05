@@ -47,6 +47,20 @@ function Home() {
     image: "https://d1lhfd3j3c8egz.cloudfront.net/themes/theme7/a2.jpeg",
     title: "Emily Rodriguez",
     description: "The level of professionalism is unmatched in the industry. They delivered our complex project on time and within budget while maintaining excellent communication throughout the process. The team's expertise was evident at every stage."
+  },
+{
+    image: "https://d1lhfd3j3c8egz.cloudfront.net/themes/theme7/a2.jpeg",
+    title: "Sarah Johnson",
+    description: "The service exceeded all our expectations. From initial consultation to final delivery, the team demonstrated exceptional professionalism and attention to detail. The solution implemented has transformed our workflow efficiency by over 60%."
+  },
+  {
+    image: "https://d1lhfd3j3c8egz.cloudfront.net/themes/theme7/a2.jpeg",
+    title: "Michael Chen",
+    description: "Working with this company has been a game-changer. Their innovative approach solved problems we didn't even know we had. The implementation was seamless and the ongoing support has been outstanding."
+  }, {
+    image: "https://d1lhfd3j3c8egz.cloudfront.net/themes/theme7/a2.jpeg",
+    title: "Emily Rodriguez",
+    description: "The level of professionalism is unmatched in the industry. They delivered our complex project on time and within budget while maintaining excellent communication throughout the process. The team's expertise was evident at every stage."
   }]
 
 
