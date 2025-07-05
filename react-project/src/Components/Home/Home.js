@@ -1,5 +1,7 @@
 import React from "react";
 import './Home.css';
+import CoursesSectionCode from "../CoursesSectionCode/CoursesSectionCode";
+import FooterSectionCode from "../FooterSectionCode/FooterSectionCode";
 
 function Home() {
 
@@ -32,21 +34,6 @@ function Home() {
     }
   ]
 
-  const coursesObject = [{
-    image: "https://media.licdn.com/dms/image/v2/D4D12AQGRsL7h26w-Bg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1711431970518?e=2147483647&v=beta&t=7MUoFdBoTt2bbPGQLIg36dcFCRHCwu1HyicK282aK6Y",
-    title: "Full Stack Development",
-    description: "Build real projects,and land your dream job as Full stack developer"
-  },
-  {
-    image: "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20201111215809/How-to-Become-a-Front-End-Developer-in-2020.png",
-    title: "FrontEnd Development",
-    description: "Experience the real-world of frontend development!"
-  }, {
-    image: "https://media.geeksforgeeks.org/wp-content/uploads/20240701150157/Backend-Development.webp",
-    title: "Back-End Development",
-    description: "Prepare for a Back-End career with a real-world office simulation experience!"
-  }]
-
   const resultObject = [{
     image: "https://d1lhfd3j3c8egz.cloudfront.net/themes/theme7/a2.jpeg",
     title: "Sarah Johnson",
@@ -62,24 +49,7 @@ function Home() {
     description: "The level of professionalism is unmatched in the industry. They delivered our complex project on time and within budget while maintaining excellent communication throughout the process. The team's expertise was evident at every stage."
   }]
 
-  const footerObj = [{
-     image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj25zYqL4_MbUGibcRX7WIwwjdjbpmkXvRowmwp8vU5skTbv-94lDUdKTot8JngKPebwuffxdclhJpSfOSQtMwPwOuS8SGdCKtDJcT6qNM4mKo-8E2fMn7CLe5ye-THgRYAFhOWZtKeGkQ/s0-rw/Instagram+Logo+-+Download+Free+Vector+PNG.png"},
-     {
-      image: "https://thumbs.dreamstime.com/b/isolated-linkedin-logo-vector-illustration-icon-minsk-belarus-march-142909970.jpg"
-     },
-     {
-      image: "https://static.vecteezy.com/system/resources/thumbnails/018/930/575/small_2x/youtube-logo-youtube-icon-transparent-free-png.png"
-     }
-  ]
-const footLinks = [{
-  link: "Privacy policy"
-}, {
-  link: "Terms of use"
-},{
-  link: "contact us"
-},{
-  link: "Refund policy"
-}]
+
   return (
     <>
       <div className="main-container">
@@ -164,26 +134,12 @@ const footLinks = [{
 
         <div className="courses-section">
           <h3 className="courses-heading">Start your fitness journey</h3>
-          <div className="container">
-            <div className="row row-course-container">
-              {coursesObject.map((course, index) => {
-                return (
-                  <div class="card course-card" style={{ width: '380px' }}>
-                    <div className="course-image">
-                      <img class="card-img-top course-img" src={course.image} alt="image" />
-                    </div>
-                    <div class="card-body">
-                      <h5 class="card-title course-title">{course.title}</h5>
-                      <p class="card-tex course-description">{course.description}</p>
-                      <a href="#" class="btn btn-primary courses-button">Register Now</a>
-                    </div>
-                  </div>
-                )
-              })}
 
-            </div>
-          </div>
+           <CoursesSectionCode />
+
         </div>
+
+       
 
 
         <div className="real-results-container">
@@ -208,32 +164,7 @@ const footLinks = [{
           <button className="reslut-course-button">View All Courses</button>
         </div>
 
-        <footer className="foot-container">
-              <div className="footer-1">
-                 <button className="footer-button">launched by</button>
-                <div className="foot-img-container">
-                {footerObj.map((foot) => {
-                  return (
-                    <img className="footer-images" src={foot.image} />
-                  )
-                })}
-                </div>
-
-                <ul className="links-container">
-                {footLinks.map(flink => {
-                  return (
-                    <li>{flink.link}</li>
-                  )
-                })}
-                </ul>
-
-              </div>
-        </footer>
-
-
-
-
-
+      < FooterSectionCode/>
       </div>
     </>
   )
