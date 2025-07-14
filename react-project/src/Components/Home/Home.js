@@ -3,6 +3,7 @@ import { useState } from "react";
 import './Home.css';
 import CoursesSectionCode from "../CoursesSectionCode/CoursesSectionCode";
 import FooterSectionCode from "../FooterSectionCode/FooterSectionCode";
+import { useSelector } from "react-redux";
 
 function Home() {
 
@@ -73,6 +74,10 @@ function Home() {
   const handleToggle = () => {
     setPage(prev => (prev === 0 ? 1 : 0));
       };
+
+      // const globalData = useSelector((globalStateStorePlace) => globalStateStorePlace);
+
+      // console.log(globalData.SignUpForm.userName,"global dataaaaaaaaa")
 
 
   return (
