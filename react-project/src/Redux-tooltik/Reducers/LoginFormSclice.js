@@ -1,22 +1,41 @@
 import React from 'react'
 import { createSlice } from '@reduxjs/toolkit'
 
-const globalState = {
-  userName: "",
-  password: ""
-}
+const users = [
+  {userName: 'username1',passWord:'password1'},
+  {userName: 'username2',passWord: 'password2'}
+]
 
 
 export const LoginFormSlice = createSlice({
   name: 'login_form',
-  initialState: globalState,
+  initialState: {
+    user: null,
+    isAthenticate: false,
+    error: null
+  },
   reducers: {
-    increment: (state) => {
-      state.value += 1
-    }
+    Login: (state, action) => {
+      const {userName,passWord} = action.payload;
+
+      const user = users.find(user => user.userName === userName && user.passWord === passWord);
+
+      if (user) {
+        state.user = {userName: user.userName};
+        state.isAthenticate = true;
+        state.error = null;
+      } else {
+        state.error = 'Invalid username or password';
+      }
+    },
+    Logout: (state) => {
+      state.user = null;
+      state.isAthenticate = false;
+      state.error = null;
+    },
   },
 })
 
-export const { increment } = LoginFormSlice.actions
+export const { Login, Logout } = LoginFormSlice.actions
 
 export default LoginFormSlice.reducer

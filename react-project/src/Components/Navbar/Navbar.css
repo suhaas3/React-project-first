@@ -50,11 +50,14 @@
 
 .login-button-navbar {
   background-color: orange;
-  color: black;
+  color: white;
   border: none;
   padding: 6px 30px;
   border-radius: 20px;
   font-size: 16px;
   margin-left: 30px;
   cursor: pointer;
+}
+.login-button-navbar:focus {
+  outline: none;
 }

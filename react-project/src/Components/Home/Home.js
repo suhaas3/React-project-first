@@ -7,6 +7,8 @@ import { useSelector } from "react-redux";
 
 function Home() {
 
+  const { user} = useSelector(state => state.LoginForm);
+
   const cardsObject = [
     {
       image: "https://cdn-icons-gif.flaticon.com/6569/6569161.gif",
@@ -82,6 +84,12 @@ function Home() {
 
   return (
     <>
+    <div className="dashBoard-main">
+       <div className="dashBoard">
+      <h2>welcome!,{user.userName}</h2>
+      <p>you have Succesfully Logged in....</p>
+    </div>
+    </div>
       <div className="main-container">
         <div className="container container-top">
           <div className="row">
