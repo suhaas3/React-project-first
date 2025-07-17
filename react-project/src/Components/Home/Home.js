@@ -95,16 +95,14 @@ function Home() {
           <div className="row">
             <div className="col-6">
               <div className="top-left-section">
-                <h1 className="top-left-heading">Fitness School of
-                  the Future</h1>
-                <p className="top-left-paragraph">Find your flow with a helping hand from Jane Doe,
-                  in her yoga course for beginners.</p>
+                <h1 className="top-left-heading">“Wake up with purpose. Walk out with confidence.”</h1>
+                <p className="top-left-paragraph">"You don’t need to prove your worth. Just keep rising, and the world will catch up."</p>
                 <button className="top-left-courses-button">View All Coures</button>
               </div>
             </div>
             <div className="col-6">
               <div className="top-right-section">
-                <img className="top-right-img" src="https://d1lhfd3j3c8egz.cloudfront.net/themes/theme7/assett1.jpeg"/>
+                <img className="top-right-img" src="https://images.news9live.com/wp-content/uploads/2024/10/Hardik-Pandya.jpg?w=1200&enlarge=true"/>
               </div>
             </div>
           </div>

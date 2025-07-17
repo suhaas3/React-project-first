@@ -29,13 +29,16 @@
 
 .login-button {
  background-color: orange;
-  color: black;
+  color: white;
   border: none;
   padding: 5px 107px;
-  font-size: 15px;
+  font-size: 16px;
   border-radius: 6px;
   cursor: pointer;
   /* margin-top: -20px; */
+}
+.login-button:focus {
+  outline: none;
 }
 .error-message {
   width: 150px;
