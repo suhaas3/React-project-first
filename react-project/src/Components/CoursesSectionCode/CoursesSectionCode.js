@@ -25,13 +25,13 @@ function CoursesSectionCode() {
             <div className="row row-course-container">
               {coursesObject.map((course, index) => {
                 return (
-                  <div class="card course-card" style={{ width: '380px' }}>
+                  <div className="card course-card" style={{ width: '380px' }}>
                     <div className="course-image">
-                      <img class="card-img-top course-img" src={course.image} alt="image" />
+                      <img className="card-img-top course-img" src={course.image} alt="image" />
                     </div>
-                    <div class="card-body">
-                      <h5 class="card-title course-title">{course.title}</h5>
-                         <p class="card-tex course-description">{course.description}</p>
+                    <div className="card-body">
+                      <h5 className="card-title course-title">{course.title}</h5>
+                         <p className="card-tex course-description">{course.description}</p>
                       <button className="courses-button">Register Now</button>
                     </div>
                   </div>
