@@ -4,7 +4,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import Login from '../Login/Login';
 
-export default function CustomLoginForm({openLogin, setOpenLogin}) {
+ function CustomLoginForm({openLogin, setOpenLogin}) {
   const [open, setOpen] = React.useState(openLogin);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
@@ -27,3 +27,5 @@ export default function CustomLoginForm({openLogin, setOpenLogin}) {
     </React.Fragment>
   );
 }
+
+export default CustomLoginForm;

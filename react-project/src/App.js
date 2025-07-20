@@ -6,7 +6,7 @@ import SearchBar from "./Components/SearchBar/SearchBar";
 import Courses from "./Components/Courses/Courses";
 import Webinars from "./Components/Webinars/Webinars";
 import DigitalProducts from "./Components/DigitalProducts/DigitalProducts";
-import LoginSection from "./Components/LoginSection/LoginSection";
+// import LoginSection from "./Components/LoginSection/LoginSection";
 import Cart from "./Components/Cart/Cart";
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
           <Route path="/webinars" element={<Webinars />}/>
           <Route path="/digitalProducts" element={<DigitalProducts/>}/>
           <Route path="/cart" element={<Cart/>}/>
-          <Route path="/" element={<LoginSection/>}/>
+          {/* <Route path="/" element={<LoginSection/>}/> */}
         </Routes>
       </Router>
     </>
