@@ -5,7 +5,7 @@ function Cart() {
   return (
 
     <>
-    <h1>Cart section</h1>
+    <h1>Cart section has no products</h1>
     </>
   )
 }
