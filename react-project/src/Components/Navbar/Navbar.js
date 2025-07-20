@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './Navbar.css';
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
@@ -18,7 +18,7 @@ function Navbar() {
   const [openLogin, setOpenLogin] = useState(false);
 
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const location = useLocation();
 
 
@@ -29,7 +29,7 @@ function Navbar() {
   function handleLogin() {
     setOpenLogin(prev => !prev);
   }
-  
+
   return (
     <>
       <div className="navbar-section">
@@ -49,7 +49,7 @@ function Navbar() {
 
       </div>
 
-          {openLogin && <CustomLoginForm openLogin={openLogin} setOpenLogin={setOpenLogin}/>}
+      {openLogin && <CustomLoginForm openLogin={openLogin} setOpenLogin={setOpenLogin} />}
     </>
   )
 }

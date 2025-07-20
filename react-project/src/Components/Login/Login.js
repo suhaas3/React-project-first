@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 // import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { LoginData } from "../../Redux-tooltik/Reducers/LoginFormSclice";
+import { AuthLogin } from "../../Redux-tooltik/Reducers/AuthSlice";
 
 
 function Login() {
@@ -72,9 +73,9 @@ function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const {error, isAthenticate} = useSelector((state) => state.LoginForm )
+  const {isAuthenticate} = useSelector(state => state.auth);
 
-  console.log(loginDetails,'login deatils')
+
   function handleLogin(event) {
     const name = event.target.name;
     const value = event.target.value;
@@ -85,16 +86,8 @@ function Login() {
   }
 
   function handleSubmit(event) {
-    event.preventDefault();
-
-    dispatch(LoginData({userName: loginDetails.userName,passWord: loginDetails.passWord}))
+    dispatch(AuthLogin({userName: loginDetails.userName,passWord: loginDetails.passWord}))
   }
-
-  useEffect(() => {
-    if(isAthenticate) {
-      navigate('/home')
-    }
-  },[isAthenticate,navigate])
 
 
   return (

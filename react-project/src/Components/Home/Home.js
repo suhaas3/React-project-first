@@ -10,7 +10,7 @@ function Home() {
 
   const navigate = useNavigate();
 
-  const { user} = useSelector(state => state.LoginForm);
+  const {user} = useSelector(state => state.auth);
 
   const cardsObject = [
     {
@@ -93,7 +93,7 @@ function Home() {
     <>
     <div className="dashBoard-main">
        <div className="dashBoard">
-      {/* <h2>welcome!,{user.userName}</h2> */}
+      <h2>welcome!,{user}</h2>
       <p>you have Succesfully Logged in....</p>
     </div>
     </div>

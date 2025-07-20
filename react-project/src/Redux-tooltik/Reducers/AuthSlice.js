@@ -6,7 +6,7 @@ const globalState = {
   LoginUserDetails: {
     userName: "",
     passWord: ""
-  }
+  },
 }
 
 
@@ -15,8 +15,8 @@ export const AuthSlice = createSlice({
   initialState: globalState,
   reducers: {
     AuthLogin: (state,action) => {
-      state.LoginUserDetails.userName = action.payload;
-      state.LoginUserDetails.passWord = action.payload; 
+      state.LoginUserDetails.userName = action.payload.userName;
+      state.LoginUserDetails.passWord = action.payload.passWord; 
     }
   },
 })
