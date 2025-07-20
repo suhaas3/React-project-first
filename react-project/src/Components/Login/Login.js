@@ -3,7 +3,6 @@ import './Login.css';
 import { useNavigate } from "react-router-dom";
 // import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { LoginData } from "../../Redux-tooltik/Reducers/LoginFormSclice";
 import { AuthLogin } from "../../Redux-tooltik/Reducers/AuthSlice";
 
 

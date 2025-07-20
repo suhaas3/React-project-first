@@ -1,6 +1,5 @@
 import React from "react";
 import './Courses.css';
-import CoursesSectionCode from "../CoursesSectionCode/CoursesSectionCode";
 import FooterSectionCode from "../FooterSectionCode/FooterSectionCode";
 function Courses() {
 
