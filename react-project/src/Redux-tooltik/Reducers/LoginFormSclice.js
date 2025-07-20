@@ -15,7 +15,7 @@ export const LoginFormSlice = createSlice({
     error: null
   },
   reducers: {
-    Login: (state, action) => {
+    LoginData: (state, action) => {
       const {userName,passWord} = action.payload;
 
       const user = users.find(user => user.userName === userName && user.passWord === passWord);
@@ -36,6 +36,6 @@ export const LoginFormSlice = createSlice({
   },
 })
 
-export const { Login, Logout } = LoginFormSlice.actions
+export const { LoginData, Logout } = LoginFormSlice.actions
 
 export default LoginFormSlice.reducer

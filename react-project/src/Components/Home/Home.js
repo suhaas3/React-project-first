@@ -4,8 +4,11 @@ import './Home.css';
 import CoursesSectionCode from "../CoursesSectionCode/CoursesSectionCode";
 import FooterSectionCode from "../FooterSectionCode/FooterSectionCode";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+
+  const navigate = useNavigate();
 
   const { user} = useSelector(state => state.LoginForm);
 
@@ -77,6 +80,10 @@ function Home() {
     setPage(prev => (prev === 0 ? 1 : 0));
       };
 
+      function handleCourses() {
+        navigate('/courses')
+      }
+
       // const globalData = useSelector((globalStateStorePlace) => globalStateStorePlace);
 
       // console.log(globalData.SignUpForm.userName,"global dataaaaaaaaa")
@@ -86,7 +93,7 @@ function Home() {
     <>
     <div className="dashBoard-main">
        <div className="dashBoard">
-      <h2>welcome!,{user.userName}</h2>
+      {/* <h2>welcome!,{user.userName}</h2> */}
       <p>you have Succesfully Logged in....</p>
     </div>
     </div>
@@ -97,7 +104,7 @@ function Home() {
               <div className="top-left-section">
                 <h1 className="top-left-heading">“Wake up with purpose. Walk out with confidence.”</h1>
                 <p className="top-left-paragraph">"You don’t need to prove your worth. Just keep rising, and the world will catch up."</p>
-                <button className="top-left-courses-button">View All Coures</button>
+                <button className="top-left-courses-button" onClick={handleCourses}>View All Coures</button>
               </div>
             </div>
             <div className="col-6">
@@ -163,7 +170,7 @@ function Home() {
             </div>
           </div>
 
-          <button className="cards-button">View All Courses</button>
+          <button className="cards-button" onClick={handleCourses}>View All Courses</button>
         </div>
 
 
@@ -232,7 +239,7 @@ function Home() {
         ...
       </button>
 
-      <button className="reslut-course-button">View All Courses</button>
+      <button className="reslut-course-button" onClick={handleCourses}>View All Courses</button>
     </div>
 
       < FooterSectionCode/>

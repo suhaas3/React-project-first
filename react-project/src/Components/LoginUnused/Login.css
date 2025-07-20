@@ -1,14 +1,11 @@
-/* .login {
-    background-color: aliceblue;
-    height: 100%;
-}
-.login-main-section {
+/* .login-main-section {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   padding: 50px 60px 30px 60px;
+  height: 370px;
   border-radius: 10px;
-  padding-bottom: 124px;
 }
 
 .login-section {
@@ -18,30 +15,24 @@
   align-items: center;
   border: 2px solid black;
   padding: 50px 40px 30px 40px;
-  height: 348px;
+  height: 270px;
+  border-radius: 10px;
 }
-.username-input,
-.password-input {
-    height: 30px;
-  width: 250px;
+.input-username,
+.input-password {
+  height: 24px;
+  width: 200px;
 }
 
 .login-button {
- background-color: orange;
+  background-color: black;
   color: white;
+  padding: 3px 15px;
   border: none;
-  padding: 5px 107px;
-  font-size: 16px;
-  border-radius: 6px;
+  border-radius: 3px;
   cursor: pointer;
 }
-.login-button:focus {
-  outline: none;
-}
-.error-message {
-  width: 150px;
-  font-size: 16px;
-}
+
 .or-container {
   width: 170px;
 }

@@ -11,18 +11,17 @@ import Cart from "./Components/Cart/Cart";
 import { useSelector } from "react-redux";
 
 function App() {
-  const {isAthenticate} = useSelector(state => state.LoginForm)
   return (
     <>
       <Router>
         <Navbar/>
         <Routes>
-          <Route path="/home" element={isAthenticate ? <Home /> : <Navigate to='/'/>}/>
-          <Route path="/search" element={isAthenticate ? <SearchBar/> : <Navigate to='/' />}/>
-          <Route path="/courses" element={isAthenticate ? <Courses /> : <Navigate to='/' />}/>
-          <Route path="/webinars" element={isAthenticate ? <Webinars /> : <Navigate to='/' />}/>
-          <Route path="/digitalProducts" element={isAthenticate ? <DigitalProducts/> : <Navigate to='/' />}/>
-          <Route path="/cart" element={isAthenticate ? <Cart/> : <Navigate to='/' />}/>
+          <Route path="/home" element={<Home/>}/>
+          <Route path="/search" element={<SearchBar/>}/>
+          <Route path="/courses" element={<Courses />}/>
+          <Route path="/webinars" element={<Webinars />}/>
+          <Route path="/digitalProducts" element={<DigitalProducts/>}/>
+          <Route path="/cart" element={<Cart/>}/>
           <Route path="/" element={<LoginSection/>}/>
         </Routes>
       </Router>
