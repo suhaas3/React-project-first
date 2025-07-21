@@ -4,6 +4,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import Login from '../Login/Login';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
  function CustomLoginForm({openLogin, setOpenLogin}) {
 
@@ -17,6 +18,8 @@ import { useSelector } from 'react-redux';
   // const handleClose = () => {
   //   setOpenLogin(prev => !prev);
   // };
+
+  const navigate = useNavigate();
 
   return (
     <React.Fragment>

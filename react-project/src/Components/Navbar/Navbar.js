@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector} from "react-redux";
 import CustomLoginForm from "../CustomLoginForm/CustomLoginForm";
-import { OpenLogin } from "../../Redux-tooltik/Reducers/AuthSlice";
+import { OpenLogin, OpenLogut } from "../../Redux-tooltik/Reducers/AuthSlice";
 
 function Navbar() {
 
@@ -17,7 +17,7 @@ function Navbar() {
 
   // const [openLogin, setOpenLogin] = useState(false);
 
-  const {isOpenLogin} = useSelector((state) => state.auth);
+  const {isOpenLogin, isAuthenticate} = useSelector((state) => state.auth);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -36,6 +36,9 @@ function Navbar() {
     dispatch(OpenLogin(true))
   }
 
+  function handleLogout() {
+    dispatch(OpenLogut())
+  }
 
   
 
@@ -54,7 +57,7 @@ function Navbar() {
 
         <img src="https://www.freeiconspng.com/thumbs/cart-icon/cart-icon-14.png" className="cart-logo" onClick={() => navigateFun('/cart')} />
 
-        <button className="login-button-navbar" onClick={handleLogin}>Login</button>
+        {isAuthenticate ? <button className="login-button-navbar" onClick={handleLogout}>Logout</button> : <button className="login-button-navbar" onClick={handleLogin}>Login</button> }
 
       </div>
 

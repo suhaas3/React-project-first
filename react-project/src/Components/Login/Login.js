@@ -64,7 +64,7 @@ function Login() {
   //   }
   // }
 
-  const [loginDetails,setLoginDetails] = useState({
+  const [loginDetails, setLoginDetails] = useState({
     userName: "",
     passWord: ""
   })
@@ -72,9 +72,8 @@ function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const {isAuthenticate} = useSelector(state => state.auth);
-  
-   const {isOpenLogin} = useSelector((state) => state.auth);
+  const { isOpenLogin, isAuthenticate } = useSelector(state => state.auth);
+
 
   function handleLogin(event) {
     const name = event.target.name;
@@ -86,28 +85,28 @@ function Login() {
   }
 
   function handleSubmit() {
-    dispatch(AuthLogin({userName: loginDetails.userName,passWord: loginDetails.passWord}))
+    dispatch(AuthLogin({ userName: loginDetails.userName, passWord: loginDetails.passWord }));
     dispatch(OpenLogin(false))
   }
 
   useEffect(() => {
     if (isAuthenticate) {
-      navigate('/home')
+      navigate('/home');
     }
-  },[isAuthenticate,navigate])
+  }, [isAuthenticate, navigate]);
 
 
 
   return (
     <>
-    <div className="login">
-      <div className="login-main-section">
-        <div className="login-section">
-          <input type="text" placeholder="UserName or email" className="username-input" name="userName" onChange={handleLogin} />
-          <input type="password" placeholder="Password" className="password-input" name="passWord" onChange={handleLogin}/>
-          <button className="login-button" onClick={handleSubmit}>Login</button>
+      <div className="login">
+        <div className="login-main-section">
+          <div className="login-section">
+            <input type="text" placeholder="UserName or email" className="username-input" name="userName" onChange={handleLogin} />
+            <input type="password" placeholder="Password" className="password-input" name="passWord" onChange={handleLogin} />
+            <button className="login-button" onClick={handleSubmit}>Login</button>
+          </div>
         </div>
-      </div>
       </div>
     </>
   )
