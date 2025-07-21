@@ -3,7 +3,7 @@ import './Login.css';
 import { useNavigate } from "react-router-dom";
 // import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { AuthLogin } from "../../Redux-tooltik/Reducers/AuthSlice";
+import { AuthLogin, OpenLogin } from "../../Redux-tooltik/Reducers/AuthSlice";
 
 
 function Login() {
@@ -73,7 +73,8 @@ function Login() {
   const navigate = useNavigate();
 
   const {isAuthenticate} = useSelector(state => state.auth);
-
+  
+   const {isOpenLogin} = useSelector((state) => state.auth);
 
   function handleLogin(event) {
     const name = event.target.name;
@@ -84,9 +85,17 @@ function Login() {
     })
   }
 
-  function handleSubmit(event) {
+  function handleSubmit() {
     dispatch(AuthLogin({userName: loginDetails.userName,passWord: loginDetails.passWord}))
+    dispatch(OpenLogin(false))
   }
+
+  useEffect(() => {
+    if (isAuthenticate) {
+      navigate('/home')
+    }
+  },[isAuthenticate,navigate])
+
 
 
   return (

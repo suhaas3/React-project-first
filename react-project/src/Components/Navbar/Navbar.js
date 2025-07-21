@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import './Navbar.css';
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import { useDispatch} from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import CustomLoginForm from "../CustomLoginForm/CustomLoginForm";
+import { OpenLogin } from "../../Redux-tooltik/Reducers/AuthSlice";
 
 function Navbar() {
 
@@ -14,7 +15,9 @@ function Navbar() {
     { path: '/digitalproducts', name: 'Clubs' },
   ]
 
-  const [openLogin, setOpenLogin] = useState(false);
+  // const [openLogin, setOpenLogin] = useState(false);
+
+  const {isOpenLogin} = useSelector((state) => state.auth);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -25,9 +28,16 @@ function Navbar() {
     navigate(path)
   }
 
+  // function handleLogin() {
+  //   setOpenLogin(prev => !prev);
+  // }
+
   function handleLogin() {
-    setOpenLogin(prev => !prev);
+    dispatch(OpenLogin(true))
   }
+
+
+  
 
   return (
     <>
@@ -48,7 +58,9 @@ function Navbar() {
 
       </div>
 
-      {openLogin && <CustomLoginForm openLogin={openLogin} setOpenLogin={setOpenLogin} />}
+      {/* {openLogin && <CustomLoginForm openLogin={openLogin} setOpenLogin={setOpenLogin} />} */}
+
+      {isOpenLogin && <CustomLoginForm/>}
     </>
   )
 }

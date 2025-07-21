@@ -7,6 +7,7 @@ const globalState = {
     userName: "",
     passWord: ""
   },
+  isOpenLogin: false
 }
 
 
@@ -17,10 +18,15 @@ export const AuthSlice = createSlice({
     AuthLogin: (state,action) => {
       state.LoginUserDetails.userName = action.payload.userName;
       state.LoginUserDetails.passWord = action.payload.passWord; 
+
+      state.isAuthenticate = true;
+    },
+    OpenLogin: (state,action) => {
+      state.isOpenLogin = action.payload;
     }
   },
 })
 
-export const { AuthLogin } = AuthSlice.actions
+export const { AuthLogin, OpenLogin} = AuthSlice.actions
 
 export default AuthSlice.reducer
