@@ -11,13 +11,12 @@ import Cart from "./Components/Cart/Cart";
 import { useSelector } from "react-redux";
 
 function App() {
-  const {isAuthenticate} = useSelector((state) => state.auth);
   return (
     <>
       <Router>
         <Navbar/>
         <Routes>
-          <Route path="/home" element={isAuthenticate && (<Home/>)}/>
+          <Route path="/" element={<Home/>}/>
           <Route path="/search" element={<SearchBar/>}/>
           <Route path="/courses" element={<Courses />}/>
           <Route path="/webinars" element={<Webinars />}/>

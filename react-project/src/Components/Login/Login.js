@@ -91,7 +91,7 @@ function Login() {
 
   useEffect(() => {
     if (isAuthenticate) {
-      navigate('/home');
+      navigate('/');
     }
   }, [isAuthenticate, navigate]);
 

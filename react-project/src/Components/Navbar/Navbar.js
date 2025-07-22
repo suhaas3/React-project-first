@@ -5,15 +5,18 @@ import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector} from "react-redux";
 import CustomLoginForm from "../CustomLoginForm/CustomLoginForm";
 import { OpenLogin, OpenLogut } from "../../Redux-tooltik/Reducers/AuthSlice";
+import Dashboard from "../Dashboard/Dashboard";
 
 function Navbar() {
 
   const links = [
-    { path: '/home', name: 'Home' },
+    { path: '/', name: 'Home' },
     { path: '/courses', name: 'Courses' },
     { path: '/webinars', name: 'Events' },
     { path: '/digitalproducts', name: 'Clubs' },
   ]
+
+  const [clicked,setClicked] = useState(false);
 
   // const [openLogin, setOpenLogin] = useState(false);
 
@@ -40,13 +43,13 @@ function Navbar() {
     dispatch(OpenLogut())
   }
 
-  
+  function dashBoardPage() {
+    setClicked(prev => !prev)
+  }
 
   return (
     <>
       <div className="navbar-section">
-
-        <input className="search" type="text" placeholder="Type ur need" onClick={() => navigateFun('/search')} />
 
         <ul type='none' className='nav-lists'>
           {links.map((item, index) => (
@@ -55,7 +58,20 @@ function Navbar() {
           ))}
         </ul>
 
+        <input className="search" type="text" placeholder="Type ur need" onClick={() => navigateFun('/search')} />
+
         <img src="https://www.freeiconspng.com/thumbs/cart-icon/cart-icon-14.png" className="cart-logo" onClick={() => navigateFun('/cart')} />
+
+          {/* {isAuthenticate && 
+            <div className="dashboard-container">
+              <div type="none" className="dashboard-list">myDashBoard
+                <div className="tooltip" onClick={handleLogout}>Logout</div>
+              </div>
+              </div>} */}
+
+          {isAuthenticate && <li type="none" className="dashboard-lists" onClick={dashBoardPage}>MyDashboard</li>}
+
+          {clicked && <Dashboard/>}
 
         {isAuthenticate ? <button className="login-button-navbar" onClick={handleLogout}>Logout</button> : <button className="login-button-navbar" onClick={handleLogin}>Login</button> }
 
